@@ -1,6 +1,10 @@
 # GPCGEN
 - GPCGEN (Generalized Parallel Counter Generator)は、Xilinx社のFPGA上のコンプレッサツリーで用いる一般化並列カウンタ(GPC)のVerilog HDLによる実装を自動生成するプロジェクトです。
 
+## SEE ALSO
+- CMPGEN: https://github.com/void-hoge/cmpgen
+  - GPCGENで出力されるモジュールを利用したコンプレッサツリー合成系の実装
+
 ## 一般化並列カウンタ
 - 一般化並列カウンタ(Generalized Parallel Counter; GPC)は、小規模な重み付き多入力加算器です。
 - ASICでは全加算器を用いた回路が知られていますが、FPGAで実装する上でLUTなどの入力数を有効に活用するために、より多くのビット数、複数の桁の値を加算できるように拡張したものがGPCです。
