@@ -11,7 +11,10 @@ def int2bin(num, width):
 
 class gpcgen:
     def __init__(self, src):
-        exec(src)
+        table = {}
+        exec(src, None, table)
+        for key, value in table.items():
+            setattr(self, key, value)
         self.lutinwidth = {i:len(self.lutin[i]) for i in range(4)}
         self.luttype = {i:'' for i in range(4)}
         self.lutout = {i:{} for i in range(4)}
@@ -140,6 +143,10 @@ class gpcgen:
             elif port.get('typ', None) == 'carryout':
                 idx = port['idx']
                 dst[i].append(carryout[idx])
+            elif port.get('typ', None) == 'gpc':
+                idx = port['idx']
+                place = port['place']
+                dst[i].append(src[place][idx])
         return dst
 
     def random_test(self):

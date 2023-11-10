@@ -1,11 +1,11 @@
-self.gpcin = [6, 0, 2]
-self.lut = {
+gpcin = [6, 0, 2]
+lut = {
     0:0x6996966996696996,
     1:0xe8e8e8e8177e7ee8,
     2:0xaaaaaaaa66666666,
     3:0x0,
 }
-self.lutin = {
+lutin = {
     0:[
         {'typ':'gpc', 'place':0, 'idx':0},
         {'typ':'gpc', 'place':0, 'idx':1},
@@ -27,7 +27,7 @@ self.lutin = {
     ],
     3:[],
 }
-self.carry4in = {
+carry4in = {
     'props':{
         0:{'typ':'lut', 'idx':0, 'out':0},
         1:{'typ':'lut', 'idx':1, 'out':0},
@@ -42,7 +42,7 @@ self.carry4in = {
     },
     'carry':{},
 }
-self.gpcout = {
+gpcout = {
     0:{'typ':'carry4', 'idx':0},
     1:{'typ':'carry4', 'idx':1},
     2:{'typ':'carry4', 'idx':2},
