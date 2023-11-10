@@ -23,7 +23,6 @@ module gpc3_2(input wire[2:0]src0, output wire[1:0]dst);
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[2]),
         .DI(genes),
         .S(props)

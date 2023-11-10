@@ -160,7 +160,7 @@ class gpccodegen(gpcgen):
                         idx = port['idx']
                         code += f'src{place}[{idx}];\n'
                 else:
-                    code += '0;\n'
+                    code += '1\'h0;\n'
         return code
 
     def gen_carry4_instantation(self, tablevel):
@@ -170,10 +170,10 @@ class gpccodegen(gpcgen):
             return code
         code += self.tab*tablevel
         code += 'CARRY4 CARRY4_inst (\n'
-        args = []
-        args.append('.CO(carry4_carryout)')
-        args.append('.O(carry4_out)')
-        args.append('.CI(0)')
+        args = [
+            '.CO(carry4_carryout)',
+            '.O(carry4_out)',
+        ]
         cyinit = self.carry4in['carry']
         if cyinit.get('typ', None) == 'gpc':
             place = cyinit['place']
@@ -183,6 +183,8 @@ class gpccodegen(gpcgen):
             idx = cyinit['idx']
             out = cyinit['out']
             args.append(f'.CYINIT(lut{idx}_out[{out}])')
+        else:
+            args.append(f'.CYINIT(1\'h0)')
         args.append('.DI(genes)')
         args.append('.S(props)')
         code += self.tab*(tablevel+1)

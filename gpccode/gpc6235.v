@@ -78,7 +78,6 @@ module gpc623_5(input wire[2:0]src0, input wire[1:0]src1, input wire[5:0]src2, o
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[2]),
         .DI(genes),
         .S(props)

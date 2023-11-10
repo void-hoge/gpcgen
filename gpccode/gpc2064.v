@@ -55,15 +55,15 @@ module gpc206_4(input wire[5:0]src0, input wire[1:0]src2, output wire[3:0]dst);
     assign props[0] = lut0_out[0];
     assign props[1] = lut1_out[0];
     assign props[2] = lut2_out[0];
-    assign props[3] = 0;
+    assign props[3] = 1'h0;
     assign genes[0] = lut0_out[1];
     assign genes[1] = lut1_out[1];
     assign genes[2] = lut2_out[1];
-    assign genes[3] = 0;
+    assign genes[3] = 1'h0;
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );

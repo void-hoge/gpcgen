@@ -82,7 +82,7 @@ module gpc606_5(input wire[5:0]src0, input wire[5:0]src2, output wire[4:0]dst);
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );

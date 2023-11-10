@@ -27,7 +27,6 @@ module gpc3_2(input wire[2:0]src0, output wire[1:0]dst);
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[2]),
         .DI(genes),
         .S(props)
@@ -77,16 +76,16 @@ module gpc6_3(input wire[5:0]src0, output wire[2:0]dst);
     );
     assign props[0] = lut0_out[0];
     assign props[1] = lut1_out[0];
-    assign props[2] = 0;
-    assign props[3] = 0;
+    assign props[2] = 1'h0;
+    assign props[3] = 1'h0;
     assign genes[0] = lut0_out[1];
     assign genes[1] = lut1_out[1];
-    assign genes[2] = 0;
-    assign genes[3] = 0;
+    assign genes[2] = 1'h0;
+    assign genes[3] = 1'h0;
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );
@@ -134,18 +133,18 @@ module gpc7_3(input wire[6:0]src0, output wire[2:0]dst);
         .I4(src0[4]),
         .O(lut1_out[1])
     );
-    assign props[0] = 0;
+    assign props[0] = 1'h0;
     assign props[1] = lut0_out[0];
     assign props[2] = lut1_out[0];
-    assign props[3] = 0;
+    assign props[3] = 1'h0;
     assign genes[0] = src0[6];
     assign genes[1] = lut0_out[1];
     assign genes[2] = lut1_out[1];
-    assign genes[3] = 0;
+    assign genes[3] = 1'h0;
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );
@@ -199,16 +198,15 @@ module gpc15_3(input wire[4:0]src0, input wire[0:0]src1, output wire[2:0]dst);
     );
     assign props[0] = lut0_out[0];
     assign props[1] = lut1_out[0];
-    assign props[2] = 0;
-    assign props[3] = 0;
+    assign props[2] = 1'h0;
+    assign props[3] = 1'h0;
     assign genes[0] = lut0_out[1];
     assign genes[1] = lut1_out[1];
-    assign genes[2] = 0;
-    assign genes[3] = 0;
+    assign genes[2] = 1'h0;
+    assign genes[3] = 1'h0;
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[4]),
         .DI(genes),
         .S(props)
@@ -260,7 +258,6 @@ module gpc23_3(input wire[2:0]src0, input wire[1:0]src1, output wire[2:0]dst);
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[2]),
         .DI(genes),
         .S(props)
@@ -327,7 +324,6 @@ module gpc135_4(input wire[4:0]src0, input wire[2:0]src1, input wire[0:0]src2, o
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[4]),
         .DI(genes),
         .S(props)
@@ -395,15 +391,15 @@ module gpc206_4(input wire[5:0]src0, input wire[1:0]src2, output wire[3:0]dst);
     assign props[0] = lut0_out[0];
     assign props[1] = lut1_out[0];
     assign props[2] = lut2_out[0];
-    assign props[3] = 0;
+    assign props[3] = 1'h0;
     assign genes[0] = lut0_out[1];
     assign genes[1] = lut1_out[1];
     assign genes[2] = lut2_out[1];
-    assign genes[3] = 0;
+    assign genes[3] = 1'h0;
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );
@@ -467,7 +463,7 @@ module gpc207_4(input wire[6:0]src0, input wire[1:0]src2, output wire[3:0]dst);
         .I1(src2[1]),
         .O(lut2_out[1])
     );
-    assign props[0] = 0;
+    assign props[0] = 1'h0;
     assign props[1] = lut0_out[0];
     assign props[2] = lut1_out[0];
     assign props[3] = lut2_out[0];
@@ -478,7 +474,7 @@ module gpc207_4(input wire[6:0]src0, input wire[1:0]src2, output wire[3:0]dst);
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );
@@ -555,7 +551,6 @@ module gpc215_4(input wire[4:0]src0, input wire[0:0]src1, input wire[1:0]src2, o
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[4]),
         .DI(genes),
         .S(props)
@@ -625,7 +620,6 @@ module gpc223_4(input wire[2:0]src0, input wire[1:0]src1, input wire[1:0]src2, o
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[2]),
         .DI(genes),
         .S(props)
@@ -720,7 +714,7 @@ module gpc606_5(input wire[5:0]src0, input wire[5:0]src2, output wire[4:0]dst);
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );
@@ -815,7 +809,6 @@ module gpc607_5(input wire[6:0]src0, input wire[5:0]src2, output wire[4:0]dst);
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[6]),
         .DI(genes),
         .S(props)
@@ -915,7 +908,6 @@ module gpc615_5(input wire[4:0]src0, input wire[0:0]src1, input wire[5:0]src2, o
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[4]),
         .DI(genes),
         .S(props)
@@ -1007,7 +999,6 @@ module gpc623_5(input wire[2:0]src0, input wire[1:0]src1, input wire[5:0]src2, o
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[2]),
         .DI(genes),
         .S(props)
@@ -1115,7 +1106,6 @@ module gpc1325_5(input wire[4:0]src0, input wire[1:0]src1, input wire[2:0]src2, 
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[4]),
         .DI(genes),
         .S(props)
@@ -1201,7 +1191,6 @@ module gpc1343_5(input wire[2:0]src0, input wire[3:0]src1, input wire[2:0]src2, 
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[2]),
         .DI(genes),
         .S(props)
@@ -1301,7 +1290,7 @@ module gpc1406_5(input wire[5:0]src0, input wire[3:0]src2, input wire[0:0]src3, 
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );
@@ -1404,7 +1393,6 @@ module gpc1415_5(input wire[4:0]src0, input wire[0:0]src1, input wire[3:0]src2, 
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[4]),
         .DI(genes),
         .S(props)
@@ -1490,7 +1478,6 @@ module gpc2135_5(input wire[4:0]src0, input wire[2:0]src1, input wire[0:0]src2, 
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
         .CYINIT(src0[4]),
         .DI(genes),
         .S(props)

@@ -52,7 +52,7 @@ module gpc207_4(input wire[6:0]src0, input wire[1:0]src2, output wire[3:0]dst);
         .I1(src2[1]),
         .O(lut2_out[1])
     );
-    assign props[0] = 0;
+    assign props[0] = 1'h0;
     assign props[1] = lut0_out[0];
     assign props[2] = lut1_out[0];
     assign props[3] = lut2_out[0];
@@ -63,7 +63,7 @@ module gpc207_4(input wire[6:0]src0, input wire[1:0]src2, output wire[3:0]dst);
     CARRY4 CARRY4_inst (
         .CO(carry4_carryout),
         .O(carry4_out),
-        .CI(0),
+        .CYINIT(1'h0),
         .DI(genes),
         .S(props)
     );
